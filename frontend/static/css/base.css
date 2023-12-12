@@ -1,0 +1,200 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-new: rgba(84, 84, 84);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-dark-new: rgba(235, 235, 235);
+
+  --fs-h1-text: 4vh;
+  --fs-text: 1vh;
+
+  --body-bg-img-day: url("../img/background-day.svg");
+  --body-bg-img-night: url("../img/background-night.png");
+
+  --preloader-color-day: var(--vt-c-text-dark-new);
+  --preloader-color-night: var(--vt-c-divider-dark-new);
+
+  --wrapper-bg-color-day: rgba(93, 69, 43, 0.8);
+  --wrapper-border-color-day: rgba(249, 196, 38, 0.55);
+  --wrapper-button-color-day: #e3bc4b;
+  --wrapper-button-disabled-color-day: #746027;
+  --wrapper-button-border-color-day: #b99935;
+
+  --drop-shadow-day: rgba(249, 196, 38, 0.55);
+
+  --wrapper-bg-color-night: rgba(35, 60, 82, 1);
+  /*--wrapper-bg-color-night: #020420;*/
+  --wrapper-border-color-night: rgba(11, 36, 59, 0.77);
+  --wrapper-border-color-night: rgb(150 165 181);
+  --wrapper-button-color-night: #5085a3;
+  --wrapper-button-disabled-color-night: #40586d;
+  --wrapper-button-border-color-night: #243d53;
+
+  --drop-shadow-night: rgb(150 165 181);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+
+  --body-bg-img: var(--body-bg-img-day);
+
+  --preloader-color: var(--preloader-color-day);
+
+  --wrapper-bg-color: var(--wrapper-bg-color-day);
+  --wrapper-border-color: var(--wrapper-border-color-day);
+  --wrapper-button-color: var(--wrapper-button-color-day);
+  --wrapper-button-disabled-color: var(--wrapper-button-disabled-color-day);
+  --wrapper-button-border-color: var(--wrapper-button-border-color-day);
+
+  --drop-shadow: var(--drop-shadow-day);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+
+    --body-bg-img: var(--body-bg-img-night);
+
+    --preloader-color: var(--preloader-color-night);
+
+    --wrapper-bg-color: var(--wrapper-bg-color-night);
+    --wrapper-border-color: var(--wrapper-border-color-night);
+    --wrapper-button-color: var(--wrapper-button-color-night);
+    --wrapper-button-disabled-color: var(--wrapper-button-disabled-color-night);
+    --wrapper-button-border-color: var(--wrapper-button-border-color-night);
+
+    --drop-shadow: var(--drop-shadow-night);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Работает в Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2b38 rgba(76, 76, 76, 1);
+}
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(76, 76, 76, 0.4);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(42, 43, 56, 0.7);
+  border-radius: 20px;
+}
+
+html {
+  overflow: hidden;
+  /*overscroll-behavior-y: none;*/
+  /*background-color: #c3cdd9;*/
+  background-color: var(--wrapper-bg-color);
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--color-text);
+  /*background-image:*/
+  /*    url("../img/backgrounds/bg1.png"),*/
+  /*    url("../img/backgrounds/bg2.png"),*/
+  /*    url("../img/backgrounds/bg3.png"),*/
+  /*    url("../img/backgrounds/bg4.png"),*/
+  /*    url("../img/backgrounds/bg5.png");*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /*background-size: 220vh;*/
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  /*font-size: 15px;*/
+  text-wrap: balance;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 1375px) {
+  body {
+    /*background: var(--body-bg-img) no-repeat center!important;*/
+    background-size: cover!important;
+  }
+}
+
+/*#__layout {*/
+/* position: relative;*/
+/*  width: 100%;*/
+/*  height: 100dvh;*/
+/*  background-image:*/
+/*    url("../img/fog.png"),*/
+/*    url("../img/fog.png"),*/
+/*    url("../img/fog.png");*/
+/*    !*url("../img/clouds.png"),*!*/
+/*    !*url("../img/clouds.png"),*!*/
+/*    !*url("../img/clouds.png");*!*/
+/*  background-repeat: no-repeat;*/
+/*  !*background-size: cover;*!*/
+/*  background-position: 50% 50%;*/
+/*}*/
