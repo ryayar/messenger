@@ -40,7 +40,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'nuxt-primevue',
     ['cookie-universal-nuxt', { parseJSON: false }]
   ],
 

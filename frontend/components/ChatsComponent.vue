@@ -1,14 +1,5 @@
 <template>
   <div class="chats-search">
-    <div class="search">
-      <AutoComplete
-        v-model="searchingUsers"
-        optionLabel="name"
-        :suggestions="usernames"
-        @focusout="completeSearchUser"
-        @input="searchUser"
-      />
-    </div>
     <div class="chats">
       <div v-for="(chat, index) in chats" :key="index" class="chat" @click="active(index)">
         <div class="chat__avatar">
@@ -31,17 +22,12 @@
 </template>
 
 <script>
-import AutoComplete from 'primevue/AutoComplete'
-
 export default {
   name: 'ChatsComponent',
   props: [
     'chats',
     'activeChat'
   ],
-  components: {
-    AutoComplete
-  },
   data () {
     return {
       searchingUsers: '',
@@ -68,32 +54,32 @@ export default {
         allChat[i].classList.remove('is-active')
       }
       needChat.classList.add('is-active')
-    },
-    async searchUser () {
-      if (!this.searchingUsers) {
-        return
-      }
-      try {
-        const data = { username: this.searchingUsers }
-        const headers = { headers: { Authorization: `Token ${this.$cookies.get('token')}` } }
-        const response = await this.$axios.post('http://127.0.0.1:8000/api/search/', data, headers)
-        this.usernames = []
-        for (const i in response.data.users) {
-          this.usernames.push(response.data.users[i].name)
-        }
-      } catch (error) {
-        console.error('Ошибка при поиске пользователей:', error)
-      }
-    },
-    completeSearchUser (e) {
-      console.log(this.searchingUsers)
     }
-  }
+  //   async searchUser () {
+  //     if (!this.searchingUsers) {
+  //       return
+  //     }
+  //     try {
+  //       const data = { username: this.searchingUsers }
+  //       const headers = { headers: { Authorization: `Token ${this.$cookies.get('token')}` } }
+  //       const response = await this.$axios.post('http://127.0.0.1:8000/api/search/', data, headers)
+  //       this.usernames = []
+  //       for (const i in response.data.users) {
+  //         this.usernames.push(response.data.users[i].name)
+  //       }
+  //     } catch (error) {
+  //       console.error('Ошибка при поиске пользователей:', error)
+  //     }
+  //   },
+  //   completeSearchUser (e) {
+  //     console.log(this.searchingUsers)
+  //   }
+  // }
   // mounted () {
   //   for (const item in this.items) {
   //     this.items[item].avatar = require('@/static/img/avatars/' + this.items[item].avatar)
   //   }
-  // },
+  }
 }
 </script>
 

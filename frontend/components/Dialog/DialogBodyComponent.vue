@@ -73,7 +73,7 @@ export default {
         margin-top: 0.2em;
       }
       & p {
-        background-color: #0d2c3a;
+        background-color: #202123;
         filter: drop-shadow(0px 0px 4px #091b21);
       }
     }
